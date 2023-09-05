@@ -4,65 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Relógio digital</title>
-    <style type="text/css">
-        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&display=swap');
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
 
-* {
-   margin: 0;
-   padding: 0;
-   font-family: "Open Sans", sans-serif; 
-}
-
-body {
-    height: 100%;
-    background: #000000;
-    color: aliceblue;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 100px;
-}
-
-.relogio {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    /*altura do objeto*/
-    height: 200px;
-    /* espaço entre os objetos dentro da classe*/
-    width: 550px;
-    background: transparent;
-    border-radius: 7px;
-    box-shadow: 5px 5px 15px 10px rgba(0, 107, 126, 0.5);
-}
-
-.relogio div{
-    height: 170px;
-    width: 150px;
-    display: flex;
-    /* flexbox automaticamente posiciona em linha, dai tem que especificar em coluna*/
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: #000000;
-    background: rgba(26, 229, 243, 0.9);
-    box-shadow: 5px 5px 15px rgba(0, 107, 126, 0.5);
-    border-radius: 20px;
-    /*espaço entre as letras*/
-    letter-spacing: 3px;
-}
-
-.relogio span{
-    /*colocar as letras em negrito*/
-    font-weight: bolder;
-    font-size: 35px;
-}
-
-.relogio span#tempo {
-    font-size: 20px;
-}
-    </style>
-    
 </head>
 
 <body>
@@ -85,27 +29,5 @@ body {
     </div>
 
 </body>
-
-    <script type="text/javascript">
-        const horas = document.getElementById("horas");
-        const minutos = document.getElementById("minutos");
-        const segundos = document.getElementById("segundos");
-
-        const relogio = setInterval(function time() {
-            let dateToday = new Date ();
-            let hr = dateToday.getHours();
-            let min = dateToday.getMinutes();
-            let sec = dateToday.getSeconds();
-
-            if (hr < 10) hr = "0"+hr;
-            if (min < 10) min = "0" + min;
-            if (sec < 10) sec = "0" + sec;
-
-            horas.textContent = hr;
-            minutos.textContent = min;
-            segundos.textContent = sec;
-    
-})
-    </script>
 
 </html>
